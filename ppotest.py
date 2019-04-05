@@ -6,12 +6,12 @@ from rl.envs.normalize import PreNormalizer
 from rl.policies import GaussianMLP
 from rl.utils import run_experiment
 
-from slip.slip_env import SlipEnv
+from hopper.hopper_env import HopperEnv
 
 
 def make_slip_env():
   def wrapper():
-    return SlipEnv() #for some reason, need to wrap env in a function for run_experiment
+    return HopperEnv() #for some reason, need to wrap env in a function for run_experiment
   return wrapper
 
 def main():
