@@ -29,8 +29,10 @@ class GaussianMLP(FFPolicy):
                  obs_mean=None):
         super(GaussianMLP, self).__init__()
 
-        actor_dims = (256, 256)
-        critic_dims = (256, 256)
+        #actor_dims = (256, 256)
+        #critic_dims = (256, 256)
+        actor_dims = (64, 64)
+        critic_dims = (64, 64)
 
         # create actor network
         self.actor_layers = nn.ModuleList()

@@ -29,10 +29,10 @@ def main():
 
   args = parser.parse_args()
 
-  args.batch_size = 900
-  args.lr = 2.5e-4
+  args.batch_size = 1500
+  args.lr = 5e-4
   args.epochs = 5
-  args.num_steps = 1000
+  args.num_steps = 3000
 
   args.use_gae = False
   
@@ -41,7 +41,7 @@ def main():
   obs_dim = env().observation_space.shape[0]
   action_dim = env().action_space.shape[0]
 
-  policy = GaussianMLP(obs_dim, action_dim, nonlinearity='tanh', init_std=0.15, learn_std=False)
+  policy = GaussianMLP(obs_dim, action_dim, nonlinearity='tanh', init_std=1, learn_std=False)
   normalizer = PreNormalizer(iter=100, noise_std=1, policy=policy, online=False)
   algo = PPO(args=vars(args))
 
