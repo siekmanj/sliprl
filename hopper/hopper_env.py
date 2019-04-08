@@ -41,8 +41,8 @@ class HopperEnv:
         return obs_vec
 
     def step(self, action):
-        if(len(action) != 3):
-            print("SlipEnv: action dimension was not 2!")
+        #if(len(action) != 3):
+        #    print("SlipEnv: action dimension was not 2!")
         self.sim.data.ctrl[0] = action[0]
         self.sim.data.ctrl[1] = action[1]
         self.sim.data.ctrl[2] = action[2]
